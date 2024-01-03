@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(176, 176, 176);
+}
+
+#header-itens {
+    width: calc(60% - 4px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.header-item {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: 0.3s;
+    border-radius: 0 0 7px 7px;
+    cursor: pointer;
+}
+
+.header-item:hover {
+    opacity: 1;
+    background-color: rgb(186, 186, 186);
+}
+
+.small-icon {
+    width: 20px;
+    cursor: pointer;
+}
+
+.medium-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        justify-content: space-between;
+        padding: 0 10%;
+    }
+}
