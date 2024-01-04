@@ -87,7 +87,6 @@ nav {
 #menu-bar {
     background: #0C2A37;
     font-size: 16px;
-    float: right;
     width: 30%;
     height: 90vh;
     list-style: none;
@@ -99,10 +98,10 @@ nav {
     color: white;
     text-align: left;
     padding: 15px 30px; 
-}
+}  
 
 @media only screen and (max-width: 500px) {
-    body {
+    html {
         overflow-x: hidden;
     }
     nav {
