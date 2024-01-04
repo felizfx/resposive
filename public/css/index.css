@@ -88,10 +88,11 @@ nav {
     background: #0C2A37;
     font-size: 16px;
     width: 30%;
-    height: 90vh;
+    height: 90%;
     list-style: none;
-    position: sticky;
+    position: fixed;
     top: 10vh;
+    right: 0;
 }
 
 #menu-bar > li {
