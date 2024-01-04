@@ -3,6 +3,7 @@ const nav = document.getElementsByTagName("nav")[0];
 // const cardsBox = document.getElementById("cards-box");
 
 var x = window.matchMedia("(max-width: 500px)");
+let options = ["home", "options", "chat", "chat2", "chat3"];
 
 createCards();
 
@@ -18,7 +19,6 @@ x.addEventListener("change", function() {
 	console.log(x.matches);
 	if(x.matches == false) {
 		let menuBar = document.getElementById("menu-bar");
-		console.log(menuBar);
 		if(menuBar) removeElement(menuBar);
 		
 		addNavOptions();
@@ -31,13 +31,15 @@ x.addEventListener("change", function() {
 export function addNavOptions() {
 	let hamburguer = document.getElementById("hamburguer-icon");
 	if(hamburguer) hamburguer.remove();      
-	nav.innerHTML += `
-        <ul id="nav-itens">
-            <li class="nav-item">home</li>
-            <li class="nav-item">options</li>
-            <li class="nav-item">chat</li>
-        </ul>
-    `;
+
+	let itens = document.createElement("ul");
+	itens.id = "nav-itens";
+
+	for (let i = 0; i < options.length; i++){
+		addOptionRoute(i, itens, "nav-item");
+	}
+
+	nav.appendChild(itens);
 }
 
 export function addHamburguerOption() {
@@ -88,6 +90,7 @@ export function addUserProfile() {
 		nav.insertBefore(createUserIcon, nav.firstChild);
 	}
 }
+
 export function removeElement(el) {
 	el.remove();
 }
@@ -99,17 +102,28 @@ export function createCards() {
 			console.log(data);
 		});
 }
+
 export function createMenuBar() {
 	let menuBar = document.createElement("ul");
 	menuBar.id = "menu-bar";
 
-	for (let i = 0; i < 5; i++){
-		let li = document.createElement("li");
-		li.textContent = `teste${i}`;
-		menuBar.appendChild(li);
+	for (let i = 0; i < options.length; i++){
+		addOptionRoute(i, menuBar, "hambuguer-option");
 	}
 
 	menuBar.classList.add("slide-in");
 
 	header.appendChild(menuBar);
-}	
+}
+
+export function addOptionRoute(i, father, className) {
+	let item = document.createElement("li");
+	item.textContent = options[i];
+	item.classList.add(className);
+
+	item.addEventListener("click", () => {
+		window.location.href = `page.html?name=${options[i]}`;
+	});
+
+	father.appendChild(item);
+}

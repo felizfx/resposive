@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter;
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -28,13 +35,6 @@
     animation: slideOut 0.1s ease-in-out;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: inter;
-}
-
 nav {
     display: flex;
     justify-content: space-around;
@@ -42,22 +42,23 @@ nav {
     flex-wrap: wrap;
     width: 100vw;
     height: 10vh;
-    background-color: rgb(176, 176, 176);
+    background-color: #0E374C;
     position: sticky;
     top: 0;
+    color: white;
 }
 
 #nav-itens {
     width: calc(60% - 4px);
     height: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
 }
 
 .nav-item {
-    width: 30%;
+    min-width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -70,7 +71,7 @@ nav {
 
 .nav-item:hover {
     opacity: 1;
-    background-color: rgb(186, 186, 186);
+    background-color: #0C2A37;
 }
 
 .small-icon {
@@ -84,24 +85,26 @@ nav {
 }
 
 #menu-bar {
-    background: rgb(176, 176, 176);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    font-family: sans-serif;
+    background: #0C2A37;
     font-size: 16px;
     float: right;
     width: 30%;
+    height: 90vh;
     list-style: none;
     position: sticky;
     top: 10vh;
 }
 
 #menu-bar > li {
-    color: #333;
+    color: white;
     text-align: left;
-    padding: 6% 15%; 
+    padding: 15px 30px; 
 }
 
 @media only screen and (max-width: 500px) {
+    body {
+        overflow-x: hidden;
+    }
     nav {
         justify-content: space-between;
         padding: 0 10%;
