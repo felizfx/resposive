@@ -35,6 +35,11 @@
     animation: slideOut 0.1s ease-in-out;
 }
 
+header {
+    position: sticky;
+    top: 0;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -43,8 +48,6 @@ nav {
     width: 100vw;
     height: 10vh;
     background-color: #0E374C;
-    position: sticky;
-    top: 0;
     color: white;
 }
 
