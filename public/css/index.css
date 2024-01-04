@@ -1,5 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.1s ease-in-out;
+}
+
+.slide-out {
+    animation: slideOut 0.1s ease-in-out;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +35,7 @@
     font-family: inter;
 }
 
-header {
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -15,9 +43,11 @@ header {
     width: 100vw;
     height: 10vh;
     background-color: rgb(176, 176, 176);
+    position: sticky;
+    top: 0;
 }
 
-#header-itens {
+#nav-itens {
     width: calc(60% - 4px);
     height: 100%;
     display: flex;
@@ -26,7 +56,7 @@ header {
     list-style: none;
 }
 
-.header-item {
+.nav-item {
     width: 30%;
     height: 100%;
     display: flex;
@@ -38,7 +68,7 @@ header {
     cursor: pointer;
 }
 
-.header-item:hover {
+.nav-item:hover {
     opacity: 1;
     background-color: rgb(186, 186, 186);
 }
@@ -49,12 +79,30 @@ header {
 }
 
 .medium-icon {
-    width: 30px;
+    width: 36px;
     cursor: pointer;
 }
 
+#menu-bar {
+    background: rgb(176, 176, 176);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+    font-size: 16px;
+    float: right;
+    width: 30%;
+    list-style: none;
+    position: sticky;
+    top: 10vh;
+}
+
+#menu-bar > li {
+    color: #333;
+    text-align: left;
+    padding: 6% 15%; 
+}
+
 @media only screen and (max-width: 500px) {
-    header {
+    nav {
         justify-content: space-between;
         padding: 0 10%;
     }
