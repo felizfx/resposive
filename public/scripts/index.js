@@ -71,7 +71,7 @@ export function addUserProfile() {
 
 	let createUserIcon = document.createElement("img");
 	createUserIcon.className = "medium-icon";
-	createUserIcon.src = "images/userIcon.png";
+	createUserIcon.src = "images/user.png";
 	createUserIcon.alt = "userprofile";
 	createUserIcon.id = "user-icon";
 
